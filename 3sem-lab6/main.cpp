@@ -1,6 +1,23 @@
-#include <iostream>
+#include "Businessman.h"
+#include "List.h"
+#include "List.cpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    List<Man> manList;
+    manList.pushBack(Man("Ruslan", "Alhava"));
+    manList.pushBack(Man("Ivan", "Zinovich"));
+    manList.pushBack(Man("Aomine", "Daiki"));
+    manList.writeToFileText("txtFile.txt");
+
+    List<Man> manListFromFileText;
+    manListFromFileText.readFromFileText("txtFile.txt");
+
+    manList.writeToFileBinary("binaryFile.txt");
+
+    List<Man> manListFromFileBinary;
+    manListFromFileBinary.readFromFileBinary("binaryFile.txt");
+
+    manList.print();
+    manListFromFileText.print();
+    manListFromFileBinary.print();
 }
