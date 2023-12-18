@@ -33,7 +33,7 @@ void Man::printInfo() const {
 }
 
 std::ostream& operator<<(std::ostream& os, const Man& man) {
-    os << man.firstName << " " << man.lastName << "\n";
+    os << man.firstName << " " << man.lastName;
     return os;
 }
 
